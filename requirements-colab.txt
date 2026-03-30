@@ -1,0 +1,4 @@
+faster-whisper
+pandas
+openpyxl
+PyYAML
