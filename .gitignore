@@ -1,0 +1,30 @@
+# Virtual Environment
+.venv/
+env/
+
+# Python caching
+__pycache__/
+*.pyc
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Data files (keep templates, ignore large mp3s and working excels)
+data/raw_audio/*.mp3
+data/working/*.xlsx
+
+# Ignored outputs (keep directory structure via .gitkeep)
+outputs/whisper_json/*
+outputs/whisper_txt/*
+outputs/logs/*
+outputs/final_transcripts/*
+!outputs/whisper_json/.gitkeep
+!outputs/whisper_txt/.gitkeep
+!outputs/logs/.gitkeep
+!outputs/final_transcripts/.gitkeep
+
+# Project Planning
+plan.md

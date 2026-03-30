@@ -1,0 +1,20 @@
+files:
+  - participant_id: "38010-2A"
+    audio_filename: "038010_EIT-2A.mp3"
+    sheet_name: "38010-2A"
+    start_offset_sec: 150
+  
+  - participant_id: "38011-1A"
+    audio_filename: "038011_EIT-1A.mp3"
+    sheet_name: "38011-1A"
+    start_offset_sec: 150
+  
+  - participant_id: "38012-2A"
+    audio_filename: "038012_EIT-2A.mp3"
+    sheet_name: "38012-2A"
+    start_offset_sec: 720
+  
+  - participant_id: "38015-1A"
+    audio_filename: "038015_EIT-1A.mp3"
+    sheet_name: "38015-1A"
+    start_offset_sec: 150
