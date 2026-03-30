@@ -30,9 +30,18 @@ def populate_excel():
     shutil.copy2(excel_template, backup_path)
     print(f"Created safety backup at {backup_path}")
     
+    csv_dir = Path("outputs/review_csv")
+    print("\n--- SAFETY CHECK: Excel Write-Back Initialization ---")
+    print(f"Target Workbook: {excel_template}")
+    print("Expected Audit CSV Files:")
+    for file_meta in config.get("files", []):
+        csv_path = csv_dir / f"{file_meta['participant_id']}_audit.csv"
+        status = 'FOUND' if csv_path.exists() else 'MISSING'
+        print(f"  - {csv_path.name} [{status}]")
+    print("---------------------------------------------------\n")
+
     # Load workbook using openpyxl directly to preserve formulas/formatting
     wb = openpyxl.load_workbook(excel_template)
-    csv_dir = Path("outputs/review_csv")
     
     for file_meta in config.get("files", []):
         participant_id = file_meta["participant_id"]

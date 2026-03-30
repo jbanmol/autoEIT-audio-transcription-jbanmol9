@@ -1,6 +1,7 @@
 import os
 import json
 import yaml
+import argparse
 from pathlib import Path
 
 def run_whisper_pipeline():
@@ -17,6 +18,21 @@ def run_whisper_pipeline():
         
     with open(config_path, "r") as f:
         config = yaml.safe_load(f)
+        
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--only-id", type=str, help="Process only a specific participant_id (e.g., 38010-2A)")
+    args = parser.parse_args()
+
+    files_to_process = config.get("files", [])
+    if args.only_id:
+        files_to_process = [f for f in files_to_process if f["participant_id"] == args.only_id]
+        if not files_to_process:
+            print(f"Error: participant_id {args.only_id} not found in config.")
+            return
+
+    print("Files to be processed:")
+    for file_meta in files_to_process:
+        print(f"  - {file_meta['participant_id']} ({file_meta['audio_filename']})")
         
     raw_audio_dir = Path("data/raw_audio")
     output_json_dir = Path("outputs/whisper_json")
@@ -38,7 +54,7 @@ def run_whisper_pipeline():
     model = WhisperModel("large-v3", device="auto", compute_type="default")
     
     # Process each file
-    for file_meta in config.get("files", []):
+    for file_meta in files_to_process:
         participant_id = file_meta["participant_id"]
         audio_file = file_meta["audio_filename"]
         start_offset = file_meta["start_offset_sec"]
