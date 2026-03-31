@@ -1,0 +1,11 @@
+# Test II - Requirements
+# AutoEIT Automated Scoring System
+
+pandas>=1.5.0
+openpyxl>=3.0.0
+PyYAML>=6.0
+groq>=0.4.0
+python-dotenv>=1.0.0
+
+# For Colab compatibility (optional)
+# google-colab>=1.0.0

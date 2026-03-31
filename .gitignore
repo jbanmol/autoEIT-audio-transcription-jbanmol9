@@ -32,3 +32,13 @@ outputs/final_transcripts/*
 # Track audited CSVs (submission deliverables)
 !outputs/review_csv/*.csv
 
+# API Keys and secrets
+.env
+.env.local
+*.env
+
+# Test 2 outputs (keep code, ignore generated scores)
+test2_scoring/outputs/*
+!test2_scoring/outputs/.gitkeep
+test2_scoring/data/output/*
+

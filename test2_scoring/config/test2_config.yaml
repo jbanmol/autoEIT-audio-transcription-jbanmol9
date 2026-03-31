@@ -1,0 +1,32 @@
+# Test II Configuration
+# AutoEIT Automated Scoring System
+
+# Groq API Configuration
+# IMPORTANT: Set GROQ_API_KEY environment variable before running
+# Or create a .env file with: GROQ_API_KEY=your_key_here
+GROQ_API_KEY_PLACEHOLDER: "your_groq_api_key_here"
+
+# Model Configuration
+MODEL: "meta-llama/llama-4-scout-17b-16e-instruct"
+TEMPERATURE: 0.1  # Low temperature for consistent scoring
+
+# Scoring Settings
+MAX_RETRIES: 3
+RETRY_DELAY: 2  # seconds
+BATCH_SIZE: 10  # Process in batches to avoid rate limits
+CONSISTENCY_CHECK_SAMPLE_SIZE: 24  # 20% of 120 items
+
+# Input/Output Paths
+INPUT_FILE: "../data/working/AutoEIT Sample Audio for Transcribing_WORKING.xlsx"
+OUTPUT_FILE: "../test2_scoring/data/output/scored_results.xlsx"
+
+# Participants to process (from Test I)
+PARTICIPANTS:
+  - "38010-2A"
+  - "38011-1A"
+  - "38012-2A"
+  - "38015-1A"
+
+# Output Columns
+SCORE_COLUMN: "LLM_Score"
+RATIONALE_COLUMN: "LLM_Rationale"
