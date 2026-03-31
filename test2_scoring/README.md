@@ -35,13 +35,13 @@ flowchart LR
     end
     
     subgraph Processing
-        D[LLM-as-Judge<br/>llama-4-scout]
-        E[Scoring Prompt<br/>Rubric + Examples]
+        D["LLM-as-Judge<br/>llama-4-scout"]
+        E["Scoring Prompt<br/>Rubric + Examples"]
     end
     
     subgraph Output
-        F[Score 0-4]
-        G[Rationale]
+        F["Score 0-4"]
+        G["Rationale"]
     end
     
     A --> D
@@ -51,9 +51,13 @@ flowchart LR
     D --> F
     D --> G
     
-    style D fill:#e1f5fe,stroke:#01579b
-    style F fill:#e8f5e8,stroke:#2e7d32
-    style G fill:#fff3e0,stroke:#e65100
+    style A fill:#1976D2,stroke:#0D47A1,color:#fff
+    style B fill:#1976D2,stroke:#0D47A1,color:#fff
+    style C fill:#1976D2,stroke:#0D47A1,color:#fff
+    style D fill:#FF6F00,stroke:#E65100,color:#fff
+    style E fill:#7B1FA2,stroke:#4A148C,color:#fff
+    style F fill:#388E3C,stroke:#1B5E20,color:#fff
+    style G fill:#388E3C,stroke:#1B5E20,color:#fff
 ```
 
 ### Pipeline Stages
@@ -125,11 +129,11 @@ When a researcher scores EIT transcriptions, they ask: *"How well did the learne
 ```mermaid
 graph TB
     subgraph Prompt
-        A[Role: SLA Researcher]
-        B[Rubric: 0-4 Definitions]
-        C[Examples: From Rubric Doc]
-        D[Special Rules]
-        E[Output Format: XML Tags]
+        A["Role: SLA Researcher"]
+        B["Rubric: 0-4 Definitions"]
+        C["Examples: From Rubric Doc"]
+        D["Special Rules"]
+        E["Output Format: XML Tags"]
     end
     
     A --> B
@@ -137,10 +141,11 @@ graph TB
     C --> D
     D --> E
     
-    style A fill:#f3e5f5,stroke:#7b1fa2
-    style B fill:#e8eaf6,stroke:#303f9f
-    style C fill:#e0f2f1,stroke:#00695c
-    style E fill:#fff3e0,stroke:#e65100
+    style A fill:#7B1FA2,stroke:#4A148C,color:#fff
+    style B fill:#1565C0,stroke:#0D47A1,color:#fff
+    style C fill:#00838F,stroke:#006064,color:#fff
+    style D fill:#FF6F00,stroke:#E65100,color:#fff
+    style E fill:#2E7D32,stroke:#1B5E20,color:#fff
 ```
 
 ---

@@ -23,22 +23,25 @@ Standard ASR models (including Whisper large-v3) are trained to maximize linguis
 ```mermaid
 flowchart LR
     subgraph "AI Processing"
-        A[Raw Audio<br/>4 x .mp3] --> B[faster-whisper<br/>large-v3]
-        B --> C[Draft Audit CSV]
+        A["Raw Audio<br/>4 x .mp3"] --> B["faster-whisper<br/>large-v3"]
+        B --> C["Draft Audit CSV"]
     end
     
     subgraph "Human-in-the-Loop"
-        C --> D[Human Audit<br/>Audacity]
-        D --> E[Verified Transcription]
+        C --> D["Human Audit<br/>Audacity"]
+        D --> E["Verified Transcription"]
     end
     
     subgraph "Output"
-        E --> F[Excel Workbook<br/>Column C]
+        E --> F["Excel Workbook<br/>Column C"]
     end
     
-    style B fill:#e3f2fd,stroke:#1565c0
-    style D fill:#fff3e0,stroke:#e65100
-    style F fill:#e8f5e8,stroke:#2e7d32
+    style A fill:#1976D2,stroke:#0D47A1,color:#fff
+    style B fill:#FF6F00,stroke:#E65100,color:#fff
+    style C fill:#7B1FA2,stroke:#4A148C,color:#fff
+    style D fill:#FF6F00,stroke:#E65100,color:#fff
+    style E fill:#00838F,stroke:#006064,color:#fff
+    style F fill:#388E3C,stroke:#1B5E20,color:#fff
 ```
 
 | Stage | Tool | Purpose |
