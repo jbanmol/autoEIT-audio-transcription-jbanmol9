@@ -5,8 +5,8 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![Colab Ready](https://img.shields.io/badge/Colab-GPU%20T4-orange.svg)](https://colab.research.google.com/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![faster-whisper](https://img.shields.io/badge/ASR-faster--whisper-blue.svg)](https://github.com/SYLM Gavin/faster-whisper)
-[![Audacity](https://img.shields.io/badge/Audit-Tool-Audacity-yellow.svg)](https://www.audacityteam.org/)
+[![faster-whisper](https://img.shields.io/badge/ASR-faster--whisper-blue.svg)]![CI](https://github.com/SYSTRAN/faster-whisper/actions/workflows/ci.yml/badge.svg)
+[![Audacity](https://img.shields.io/badge/Audacity-Audio%20Editor-blue?logo=audacity)](https://www.audacityteam.org/)
 
 ---
 
