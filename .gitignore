@@ -12,11 +12,14 @@ __pycache__/
 # macOS
 .DS_Store
 
-# Data files (keep templates, ignore large mp3s and working excels)
+# Data files (keep templates, ignore large mp3s)
 data/raw_audio/*.mp3
-data/working/*.xlsx
 
-# Ignored outputs (keep directory structure via .gitkeep)
+# Working Excel — ignore backups, track the final populated workbook
+data/working/*.bak
+!data/working/*.xlsx
+
+# Ignored intermediate outputs (keep directory structure via .gitkeep)
 outputs/whisper_json/*
 outputs/whisper_txt/*
 outputs/logs/*
@@ -25,6 +28,9 @@ outputs/final_transcripts/*
 !outputs/whisper_txt/.gitkeep
 !outputs/logs/.gitkeep
 !outputs/final_transcripts/.gitkeep
+
+# Track audited CSVs (submission deliverables)
+!outputs/review_csv/*.csv
 
 # Project Planning
 plan.md
