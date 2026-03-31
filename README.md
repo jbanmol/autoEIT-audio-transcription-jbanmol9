@@ -5,6 +5,8 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
 [![Colab Ready](https://img.shields.io/badge/Colab-GPU%20T4-orange.svg)](https://colab.research.google.com/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![faster-whisper](https://img.shields.io/badge/ASR-faster--whisper-blue.svg)](https://github.com/SYLM Gavin/faster-whisper)
+[![Audacity](https://img.shields.io/badge/Audit-Tool-Audacity-yellow.svg)](https://www.audacityteam.org/)
 
 ---
 
@@ -18,12 +20,25 @@ Standard ASR models (including Whisper large-v3) are trained to maximize linguis
 
 ## 🏗️ Solution: Hybrid AI-Human Pipeline
 
-```
-┌──────────┐    ┌──────────────┐    ┌────────────┐    ┌─────────────┐    ┌──────────────┐
-│ Raw Audio │ →  │ faster-whisper│ →  │ Draft Audit │ →  │ Human Audit │ →  │ Excel        │
-│ 4 × .mp3  │    │ large-v3     │    │ CSV         │    │ (Audacity)  │    │ Write-Back   │
-└──────────┘    └──────────────┘    └────────────┘    └─────────────┘    └──────────────┘
-     AI Processing ─────────────────┘                  └── Human-in-the-Loop ──────────────┘
+```mermaid
+flowchart LR
+    subgraph "AI Processing"
+        A[Raw Audio<br/>4 x .mp3] --> B[faster-whisper<br/>large-v3]
+        B --> C[Draft Audit CSV]
+    end
+    
+    subgraph "Human-in-the-Loop"
+        C --> D[Human Audit<br/>Audacity]
+        D --> E[Verified Transcription]
+    end
+    
+    subgraph "Output"
+        E --> F[Excel Workbook<br/>Column C]
+    end
+    
+    style B fill:#e3f2fd,stroke:#1565c0
+    style D fill:#fff3e0,stroke:#e65100
+    style F fill:#e8f5e8,stroke:#2e7d32
 ```
 
 | Stage | Tool | Purpose |
