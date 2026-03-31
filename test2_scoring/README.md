@@ -5,6 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat&logo=python)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat)](LICENSE)
 [![Groq API](https://img.shields.io/badge/API-Groq-orange?style=flat)](https://groq.com/)
+![LLM Judge](https://img.shields.io/badge/AI-Evaluator-LLM%20Judge-purple?logo=openai)
 
 ---
 
