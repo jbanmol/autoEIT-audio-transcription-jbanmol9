@@ -32,5 +32,3 @@ outputs/final_transcripts/*
 # Track audited CSVs (submission deliverables)
 !outputs/review_csv/*.csv
 
-# Project Planning
-plan.md
